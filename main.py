@@ -4,10 +4,9 @@ from exif import Image
 from gpx_converter import Converter
 import folium
 
-csvfilename = "datas.csv"
-gpxfilename = "product.gpx"
+csvfilename = "image_data.csv"
+gpxfilename = "map_coordinates.gpx"
 coords = []
-folder_dir = "C:/Users/Pingvinn/Desktop/python_geo/photos"
 image_loc = []
 gps_dict = []
 
@@ -64,7 +63,7 @@ def check_csv_exists(filename):
 
 # MAIN #
 
-for im in os.listdir(folder_dir):
+for im in os.listdir("./photos/"):
     if (im.endswith(".png") | im.endswith(".jpg") | im.endswith(".jpeg")):
         t = "photos/" + im
         image_loc.append(t)
